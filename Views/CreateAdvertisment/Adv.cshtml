@@ -1,0 +1,87 @@
+﻿@model HorseVito.Models.AdvertisementModel
+
+<section class="header_text sub">
+    <h4><span>Добавить объявление</span></h4>
+</section>
+<section class="main-content">
+    <div class="row">
+        <div class="span7">
+            <form asp-action="Adv" asp-controller="CreateAdvertisment" method="post" class="form-stacked" asp-antiforgery="true" enctype="multipart/form-data">
+                <div class="validation" asp-validation-summary="ModelOnly"></div>
+
+                <fieldset>
+                    <div class="control-group">
+                        <label class="control-label">Никнейм</label>
+                        <div class="controls">
+                            <input type="text" asp-for="Name" placeholder="Имя" class="input-xlarge" />
+                            <span asp-validation-for="Name" class="attention-text" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Порода</label>
+                        <div class="controls">
+                            <input type="text" asp-for="Breed" placeholder="Порода" class="input-xlarge" />
+                            <span asp-validation-for="Breed" class="attention-text" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Пол</label>
+                        <div style="display:flex">
+                            <div style=" margin-right: 25px; text-align: center;">
+                                <input id="radio-1" type="radio" name="SelectedGender" value="Жеребец" />
+                                <label for="radio-1">Жеребец</label>
+                            </div>
+                            <div style=" margin-right: 25px; text-align: center;"> 
+                                <input id="radio-2" type="radio" name="SelectedGender" value="Кобыла" />
+                                <label for="radio-2">Кобыла</label>
+                            </div>
+                            <div style=" margin-right: 25px; text-align: center;">
+                                <input id="radio-3" type="radio" name="SelectedGender" value="Мерин" />
+                                <label for="radio-3">Мерин</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Рост</label>
+                        <div class="controls">
+                            <input type="text" asp-for="Height" placeholder="Рост" class="input-xlarge" />
+                            <span asp-validation-for="Height" class="attention-text" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Возраст</label>
+                        <div class="controls">
+                            <input type="text" asp-for="Age" placeholder="Возраст" class="input-xlarge" />
+                            <span asp-validation-for="Age" class="attention-text" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Фото</label>
+                        <div class="controls">
+                            <input type="file" name="HorsePhoto" placeholder="Фото" class="input-xlarge" />
+                            <span asp-validation-for="Price" class="attention-text" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Описание</label>
+                        <div class="controls">
+                            <textarea name="DescriptionTxt"  class="input-xlarge" placeholder="Описание"></textarea>
+                            @*<input type="text" asp-for="Description" placeholder="Описание" class="input-xlarge" onkeydown="this.style.width = ((this.value.length + 1) * 8) + 'px';" />*@
+                            
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Цена</label>
+                        <div class="controls">
+                            <input type="text" asp-for="Price" placeholder="Цена" class="input-xlarge" />
+                            <span asp-validation-for="Price" class="attention-text" />
+                        </div>
+                    </div>
+                    
+                    <hr>
+                    <div class="actions"><input tabindex="9" class="btn btn-inverse large" type="submit" value="Добавить объявление"></div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</section>

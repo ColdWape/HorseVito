@@ -1,0 +1,50 @@
+﻿@model HorseVito.Models.RegModel
+
+
+<section class="header_text sub">
+    <h4><span>Регистрация</span></h4>
+</section>
+<section class="main-content">
+    <div class="row">
+        <div class="span7">
+            <h4 class="title"><span class="text"> Форма <strong>Регистрации</strong></span></h4>
+            <form asp-action="Reg" asp-controller="Login" method="post" class="form-stacked" asp-antiforgery="true" enctype="multipart/form-data">
+                <div class="validation" asp-validation-summary="ModelOnly"></div>
+
+                <fieldset>
+                    <div class="control-group">
+                        <label class="control-label">Никнейм</label>
+                        <div class="controls">
+                            <input type="text" asp-for="Username" placeholder="Введите никнейм" id="username" class="input-xlarge" />
+                            <span asp-validation-for="Username" class="attention-text" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Фото профиля</label>
+                        <div>
+                            <input type="file" asp-for="Avatar" name="Avatar" id="UsersAvatar" />
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label class="control-label">Номер телефона</label>
+                        <div class="controls">
+                            <input type="text" asp-for="PhoneNumber" placeholder="Введите номер телефона" id="phone" class="input-xlarge" />
+                            <span asp-validation-for="PhoneNumber" class="attention-text" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Пароль</label>
+                        <div class="controls">
+                            <input type="password" asp-for="Password" placeholder="Введите пароль" id="password" class="input-xlarge" />
+                            <span asp-validation-for="Password" class="attention-text" />
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="actions"><input tabindex="9" class="btn btn-inverse large" type="submit" value="Зарегистрироваться"></div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</section>

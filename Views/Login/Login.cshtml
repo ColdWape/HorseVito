@@ -1,0 +1,37 @@
+﻿@model HorseVito.Models.LoginModel
+
+
+<section class="header_text sub">
+    <h4><span>Вход</span></h4>
+</section>
+<section class="main-content">
+    <div class="row">
+        <div class="span5">
+            <h4 class="title"><span class="text">  <strong>Вход</strong> на сайт</span></h4>
+            <form asp-action="Login" asp-controller="Login"  asp-antiforgery="true">
+                <div class="validation" asp-validation-summary="ModelOnly"></div>
+                <input type="hidden" name="next" value="/">
+                <fieldset>
+                    <div class="control-group">
+                        <label class="control-label">Никнейм</label>
+                        <div class="controls">
+                            <input type="text" asp-for="Username" placeholder="Введите никнейм" id="username" class="input-xlarge" />
+                            <span asp-validation-for="Username" class="attention-text" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Пароль</label>
+                        <div class="controls">
+                            <input asp-for="Password" type="password" placeholder="Введите пароль" id="password" class="input-xlarge" />
+                            <span asp-validation-for="Password" class="attention-text" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <input tabindex="3" class="btn btn-inverse large" type="submit" value="Войти в аккаунт">
+                        <hr>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</section>

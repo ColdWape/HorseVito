@@ -1,0 +1,38 @@
+﻿<section class="header_text sub">
+    <h4><span>Список лошадок</span></h4>
+</section>
+
+<section class="main-content">
+
+    <div class="row">
+        <div class="span12">
+            <ul class="thumbnails listing-products">
+
+                @foreach (var item in ViewBag.Adv)
+                {
+                    <li class="span3">
+                        <form asp-controller="AdvInfo" asp-action="AdvInfo">
+                            <div class="product-box">
+                                <input type="text" name="AdvId" style="display:none" value="@item.Id" />
+
+                                <span class="sale_tag"></span>
+
+                                <p><img style="max-height: 180px;" alt="" src="@item.Photo"></p><br />
+                                <h3>@item.Name</h3>
+                                <h4>Порода: @item.Breed</h4>
+                                <p class="price">@item.Price &#8381;</p>
+                                <input type="submit" class="advBtn" value="Просмотреть объявление" />
+
+                            </div>
+                        </form>
+                    </li>
+                }
+
+                
+            </ul>
+            <hr>
+            
+        </div>
+        
+    </div>
+</section>
